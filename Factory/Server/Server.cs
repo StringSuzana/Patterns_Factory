@@ -7,19 +7,25 @@ namespace Factory
 {
     public class Server : IServer
     {
-        private readonly string FILE_NAME = @"C:\Users\Suz\Desktop\Diplomski Algebra\Semester_02\Advanced Application Development Based on Development Templates\Assignments\Factory\Factory\Factory\Data\products.txt";
+        private string FILE_PATH = String.Empty;
         private readonly ILogger _logger;
 
         public Server(ILogger logger)
         {
             _logger = logger;
+
+            string FILE_NAME = "products.txt";
+            string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string sFile = Path.Combine(sCurrentDirectory, (@"..\..\..\Data\" + FILE_NAME));
+            FILE_PATH = Path.GetFullPath(sFile);
+
         }
 
         private List<String> GetProductsOnSaleNames()
         {
             List<String> products_on_sale_Names = new List<string>();
             string line = "";
-            using (StreamReader sr = new StreamReader(FILE_NAME))
+            using (StreamReader sr = new StreamReader(FILE_PATH))
             {
                 while ((line = sr.ReadLine()) != null)
                 {
@@ -46,7 +52,7 @@ namespace Factory
         {
             string line = "";
             List<Product> prods = new List<Product>();
-            using (StreamReader sr = new StreamReader(FILE_NAME))
+            using (StreamReader sr = new StreamReader(FILE_PATH))
             {
                 while ((line = sr.ReadLine()) != null)
                 {
