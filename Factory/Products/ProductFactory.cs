@@ -26,20 +26,17 @@ namespace Factory
 
         private static Shirt CreateShirt()
         {
-            Shirt shirt = Server.GetShirt();
-            return shirt;
+            return new Shirt();
         }
 
         private static Cake CreateCake()
         {
-            Cake cake = Server.GetCake();
-            return cake;
+            return new Cake();
         }
 
         private static Ball CreateBall()
         {
-            Ball ball = Server.GetBall();
-            return ball;
+            return new Ball();
         }
     }
 }

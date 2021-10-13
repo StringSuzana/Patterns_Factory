@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Factory
 {
-    class Cake:Product
+    public class Cake : Product
     {
     }
 }

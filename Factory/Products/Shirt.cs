@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Factory
 {
-    class Shirt:Product
+    public class Shirt : Product
     {
     }
 }

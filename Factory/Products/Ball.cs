@@ -4,12 +4,7 @@ using System.Text;
 
 namespace Factory
 {
-    class Ball : Product
+    public class Ball : Product
     {
-        public new double GetDiscountPrice()
-        {
-            Console.WriteLine("GetDiscountPrice in Ball class");
-            return Price * Discount;
-        }
     }
 }
